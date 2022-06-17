@@ -12,6 +12,8 @@ import glob
 import csv
 import mysql.connector
 
+print("Execution Started---")
+
 df = pd.DataFrame(
     columns=[
         "SNO",
@@ -57,16 +59,17 @@ driver = uc.Chrome(
 	options=options,
 )
 
-
+print("Creating chrome instance---")
 # driver.get('https://www.nseindia.com/get-quotes/derivatives?symbol=BANKNIFTY')
 driver.get("https://www.nseindia.com/option-chain")
 from selenium.webdriver.support.ui import Select
-
+print("refreshing page---")
 select = Select(driver.find_element_by_id("equity_optionchain_select"))
 select.select_by_visible_text("BANKNIFTY")
 time.sleep(20)
 ref = driver.find_element_by_class_name("refreshIcon")
 ref.click()
+print("Downloading file---")
 time.sleep(20)
 l = driver.find_element_by_partial_link_text("Download (.csv)")
 l.click()

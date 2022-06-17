@@ -52,8 +52,9 @@ options = Options()
 
 # driver = uc.Chrome(version_main=95)
 driver = uc.Chrome(
-    executable_path=r"C:\\Users\\amitbsharma01\\Desktop\\Alog Trading\\chrome\\chromedriver.exe",
-    options=options,
+    #executable_path=r"C:\\Users\\amitbsharma01\\Desktop\\Alog Trading\\chrome\\chromedriver.exe",
+    executable_path=r"/usr/bin/chromedriver",
+	options=options,
 )
 
 

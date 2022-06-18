@@ -21,6 +21,13 @@ co.add_argument("--log-level=3")
 from selenium.webdriver import Chrome
 co.add_argument("--no-sandbox")
 co.add_argument("--disable-setuid-sandbox")
+co.add_argument("--disable-dev-shm-usage"); # overcome limited resource problems
+co.add_argument("start-maximized"); # open Browser in maximized mode
+co.add_argument("disable-infobars"); # disabling infobars
+co.add_argument("--disable-extensions"); # disabling extensions
+co.add_argument("--disable-gpu"); # applicable to windows os only
+co.add_argument("--no-sandbox"); # Bypass OS security model
+
 
 driver = uc.Chrome(
     #executable_path=r"C:\\Users\\amitbsharma01\\Desktop\\Alog Trading\\chrome\\chromedriver.exe",

@@ -14,46 +14,21 @@ import mysql.connector
 
 print("Execution Started---")
 
-df = pd.DataFrame(
-    columns=[
-        "SNO",
-        "call OI",
-        "call CHNG IN OI",
-        "call VOLUME",
-        "call IV",
-        "call LTP",
-        "call CHNG",
-        "call BID QTY",
-        "call BID PRICE",
-        "call ASK PRICE",
-        "call ASK QTY",
-        "STRIKE PRICE",
-        "put BID QTY",
-        "put BID PRICE",
-        "put ASK PRICE",
-        "put ASK QTY",
-        "put CHNG",
-        "put LTP",
-        "put IV",
-        "put VOLUME",
-        "put CHNG IN OI",
-        "put OI",
-    ]
-)
 
 
 co = Options()
 co.add_argument("--log-level=3")
 from selenium.webdriver import Chrome
-
+co.add_argument("--no-sandbox")
+co.add_argument("--disable-setuid-sandbox")
 # chrome_options = uc.ChromeOptions() # new solution
-
+driver = webdriver.Chrome(chrome_options=co)
 # chrome_options.add_argument('--headless')
 options = Options()
 # options.headless = True
 
-# driver = uc.Chrome(version_main=95)
-driver = uc.Chrome(
+driver = co.Chrome(version_main=102)
+driver = co.Chrome(
     #executable_path=r"C:\\Users\\amitbsharma01\\Desktop\\Alog Trading\\chrome\\chromedriver.exe",
     executable_path=r"/usr/bin/chromedriver",
 	options=options,

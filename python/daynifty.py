@@ -22,7 +22,7 @@ from selenium.webdriver import Chrome
 co.add_argument("--no-sandbox")
 co.add_argument("--disable-setuid-sandbox")
 # chrome_options = uc.ChromeOptions() # new solution
-driver = webdriver.Chrome(chrome_options=co)
+#driver = webdriver.Chrome(Options=co)
 # chrome_options.add_argument('--headless')
 options = Options()
 # options.headless = True
@@ -31,7 +31,7 @@ driver = co.Chrome(version_main=102)
 driver = co.Chrome(
     #executable_path=r"C:\\Users\\amitbsharma01\\Desktop\\Alog Trading\\chrome\\chromedriver.exe",
     executable_path=r"/usr/bin/chromedriver",
-	options=options,
+	options=co,
 )
 
 print("Creating chrome instance---")
